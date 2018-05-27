@@ -1,5 +1,5 @@
 #!/bin/bash
-
+read IP "Enter something: "
 isAlive() #Takes an IP Address and sees if it is alive or not
 {
 A=$(ping -c 4 $1 | grep Unreach | wc -l )
