@@ -1,5 +1,15 @@
 #!/bin/bash
 
+isAlive() #Takes an IP Address and sees if it is alive or not
+{
+A=$(ping -c 4 $1 | grep Unreach | wc -l )
+if [ "$A" != "0" ]; then
+ echo "0" #ip is available
+else
+ echo "1" #Ip is alive
+fi
+}
+
 validIP()
 {
 I=$IP
